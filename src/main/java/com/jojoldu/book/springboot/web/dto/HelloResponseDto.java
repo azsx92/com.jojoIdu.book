@@ -1,20 +1,21 @@
-package com.jojoldu.book.springboot.web;
+package com.jojoldu.book.springboot.web.dto;
 
-import com.jojoldu.book.springboot.web.dto.HelloResponseDto;
+import lombok.Getter;
+import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
 
-@RestController
-public class HelloController {
-    @GetMapping("/hello")
-    public String hello() {
-        return "hello";
-    }
+@Getter
+@RequiredArgsConstructor
+public class HelloResponseDto {
+   private final String name;
+   private final int  amount;
+
 
     @GetMapping("/hello/dto")
     public HelloResponseDto helloDto(@RequestParam("name") String name , @RequestParam("amount") int amount) {
         return  new HelloResponseDto(name , amount);
     }
+
 
 }

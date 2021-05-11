@@ -8,6 +8,7 @@ buildscript{
     }
     dependencies {
         classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+
     }
 }
 
@@ -20,8 +21,14 @@ repositories {
     mavenCentral()
     jcenter()
 }
-
+//나중에 병덕이를 만난다면 dependencies위와 아래 차이 설명듣기
 dependencies {
-    implementation 'org.springframework.boot:spring-boot-starter-web'
-    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    //implementation 'org.springframework.boot:spring-boot-starter-web'
+    compile('org.springframework.boot:spring-boot-starter-web')
+    compile('org.projectlombok:lombok')
+    //추가
+    annotationProcessor('org.projectlombok:lombok')
+    testAnnotationProcessor('org.projectlombok:lombok')
+    testCompile('org.springframework.boot:spring-boot-starter-test')
+    //testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
