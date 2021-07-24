@@ -72,7 +72,7 @@ public class PostsApiControllerTest {
                                                                 .build());
         Long updateId = savedPosts.getId();
         String expectedTitle   = "title2";
-        String expectContent  = "content2";
+        String expectContent    = "content2";
 
         PostsUpdateRequestDto requestDto = PostsUpdateRequestDto.builder().title(expectedTitle)
                                                                           .content(expectContent)
