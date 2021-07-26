@@ -32,7 +32,7 @@ public class PostsRepositoryTest {
 
          postsRepository.save(Posts.builder().title(title)
                                              .content(content)
-                                             .auther("jojoIdu@gmail.com")
+                                             .author("jojoIdu@gmail.com")
                                              .build());
 
          //when
@@ -49,7 +49,7 @@ public class PostsRepositoryTest {
     public void BaseTimeEntity_등록() {
         //given
          LocalDateTime now = LocalDateTime.of(2019,6,4,0,0,0);
-         postsRepository.save(Posts.builder().title("title").content("content").auther("author").build());
+         postsRepository.save(Posts.builder().title("title").content("content").author("author").build());
 
          //when
          List<Posts> postsList = postsRepository.findAll();
