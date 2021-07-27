@@ -21,10 +21,10 @@
                 </tr>
             </thead>
             <tbody id="tbody">
-              {{#posts}}  //①
+              {{#posts}}  <!--①-->
                 <tr>
-                    <td>{{id}}</td> //②
-                    <td>{{title}}</td>
+                    <td>{{id}}</td> <!--②-->
+                    <td><a href="/posts/update/{{id}}">{{title}}</a></td> <!--①-->
                     <td>{{author}}</td>
                     <td>{{modifiedDate}}</td>
                 </tr>
