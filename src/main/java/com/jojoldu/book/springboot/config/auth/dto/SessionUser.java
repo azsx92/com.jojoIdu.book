@@ -1,4 +1,4 @@
-package com.jojoldu.book.springboot.config.auth.config.auth.dto;
+package com.jojoldu.book.springboot.config.auth.dto;
 
 import com.jojoldu.book.springboot.domain.user.User;
 import lombok.Getter;

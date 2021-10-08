@@ -1,7 +1,7 @@
 package com.jojoldu.book.springboot.web.dto;
 
-import com.jojoldu.book.springboot.config.auth.config.auth.dto.SessionUser;
-import com.jojoldu.book.springboot.domain.posts.PostsRepository;
+import com.jojoldu.book.springboot.config.auth.LoginUser;
+import com.jojoldu.book.springboot.config.auth.dto.SessionUser;
 import com.jojoldu.book.springboot.service.PostsService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
@@ -18,10 +18,11 @@ public class IndexController {
     private final HttpSession httpSession;
 
     @GetMapping("/")
-    public String index(Model model) {
+    public String index(Model model , @LoginUser SessionUser user) {
+
         model.addAttribute("posts", postsService.findAllDesc());
 
-        SessionUser user = (SessionUser) httpSession.getAttribute("user");//1
+        System.out.println("IndexController model user {} {}" + model + user );
         if (user != null) { //2
             model.addAttribute("userName",user.getName());
         }

@@ -36,6 +36,10 @@ dependencies {
 
     //스프링 시큐리티2.0 20210729 추가
     compile('org.springframework.boot:spring-boot-starter-oauth2-client')
+
+    //spring-session-jdbc 20210824 추가
+    compile('org.springframework.session:spring-session-jdbc')
+
     //추가
     annotationProcessor('org.projectlombok:lombok')
     testAnnotationProcessor('org.projectlombok:lombok')

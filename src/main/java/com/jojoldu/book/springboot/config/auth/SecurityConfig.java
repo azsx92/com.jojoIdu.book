@@ -14,20 +14,20 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http    .csrf().disable()
-                .headers().frameOptions().disable() //2
-         .and()
-                        .authorizeRequests() //3
-                        .antMatchers("/","/css/**","/image/**/","/js/**","/h2-console/**").permitAll()
-                        .antMatchers("/api/v1/**").hasRole(Role.USER.name()) //4
-                        .anyRequest().authenticated() //5
-        .and()
+        http
+                .csrf().disable()
+                .headers().frameOptions().disable()
+                .and()
+                .authorizeRequests()
+                .antMatchers("/", "/css/**", "/images/**", "/js/**", "/h2-console/**", "/profile").permitAll()
+                .antMatchers("/api/v1/**").hasRole(Role.USER.name())
+                .anyRequest().authenticated()
+                .and()
                 .logout()
-                    .logoutSuccessUrl("/") //6
-        .and()
-            .oauth2Login() //7
-                .userInfoEndpoint() //8
-                    .userService(customOAuth2UserService); //9
+                .logoutSuccessUrl("/")
+                .and()
+                .oauth2Login()
+                .userInfoEndpoint()
+                .userService(customOAuth2UserService);
     }
-
 }
